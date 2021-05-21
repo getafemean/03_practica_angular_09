@@ -1,0 +1,13 @@
+<div class="container show">
+    <div class="row">
+        <div class="col-100 flex j-around a-center">
+            <div class="card" *ngFor="let articulo of articulos">
+                <h1>{{articulo.nombre}}</h1>
+                <p>{{articulo.descripcion}}</p>
+                <div class="flex j-end a-center m-t">
+                    <button (click)="addToPedido(articulo.nombre)">Añadir a pedido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

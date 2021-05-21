@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PedidosService } from '../servicios/pedidos.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  numeroArticulos: number = 0;
+
+  constructor(private pedidosService: PedidosService) { }
 
   ngOnInit(): void {
+    this.pedidosService.getNumeroArticulos()
+                       .subscribe(data => {
+                          this.numeroArticulos = data;
+                       })
   }
 
 }

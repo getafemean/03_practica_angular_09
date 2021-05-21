@@ -1,6 +1,6 @@
 <nav>
     <div class="cesta">
         <img src="/assets/img/shopping-cart.svg" alt="">
-        <div class="contador">10</div>
+        <div *ngIf="numeroArticulos > 0" class="contador">{{numeroArticulos}}</div>
     </div>
 </nav>
